@@ -49,7 +49,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE $<$<NOT:$<C_COMPILER_ID:MSVC>>:-W
 
 # Add SDL2 library
 find_package(SDL2 REQUIRED)
-target_link_libraries(${PROJECT_NAME} SDL2::Main)
+target_link_libraries(${PROJECT_NAME} SDL2::Main -static-libgcc -static-libstdc++)
 
 # Add SDL2_image library
 #find_package(SDL2_image REQUIRED)
